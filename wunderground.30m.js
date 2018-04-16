@@ -90,7 +90,7 @@ function printWeather(weather) {
   console.log("---");
   console.log("Forecast for " + w.display_location.full + " | href=" + w.forecast_url);
   console.log("Station " + w.station_id + " | href=" + w.history_url);
-  console.log(w.observation_time + "  ↻ | refresh=true");
+  console.log(w.observation_time + "  ⟳ | refresh=true");
 
   process.exit();
 
