@@ -24,6 +24,7 @@ This is my first Node project. I took it on to dip my toes in it, so I'm sure th
 - [p-e-w](https://github.com/p-e-w) for [Argos](https://github.com/p-e-w/argos)
 - [patrickvalle](https://github.com/patrickvalle) for [Wundergrounded](https://github.com/patrickvalle/wundergrounded)
 - [ipapi-co](https://github.com/ipapi-co) for [ipapi-nodejs](https://github.com/ipapi-co/ipapi-nodejs)
+- [asnodgrass](https://github.com/asnodgrass) for inspiration in [Weather Underground for Bitbar](https://github.com/matryer/bitbar-plugins/blob/master/Weather/Wunderground.30m.rb)
 
 Feel free to take a look at the source and adapt as you please.
 
