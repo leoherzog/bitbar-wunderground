@@ -1,0 +1,29 @@
+{
+  "name": "bitbar-wunderground",
+  "version": "0.1.0",
+  "description": "Local Wunderground conditions, in your Bitbar",
+  "main": "weather.30m.js",
+  "scripts": {
+    "start": "node weather.30m.js"
+  },
+  "dependencies": {
+    "ipapi.co": "latest",
+    "wundergrounded": "latest"
+  },
+  "author": "Leo Herzog",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/xd1936/wunderground-bitbar/issues"
+  },
+  "homepage": "https://github.com/xd1936/wunderground-bitbar/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xd1936/wunderground-bitbar/"
+  },
+  "keywords": [
+    "bitbar",
+    "argos",
+    "weather",
+    "wunderground"
+  ]
+}
