@@ -185,4 +185,4 @@ function convertWindDirection(degrees) {
   }
 }
 
-start();
+setTimeout(start, 1000);
