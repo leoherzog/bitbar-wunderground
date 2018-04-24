@@ -38,7 +38,7 @@ function ipLocationDetermined(loc) {
 function getWeather(loc) {
   wundergrounded.conditions().astronomy().request(loc, function(error, response) {
     if (error) {
-      printError(error.errno || error.response.error.description);
+      printError(error.errno || error.response.error.description || JSON.stringify(error));
     } else if (response.response.results) {
       var locations = [];
       for (var i in response.response.results) {
