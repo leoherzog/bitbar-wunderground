@@ -36,7 +36,7 @@ function ipLocationDetermined(loc) {
 }
 
 function getWeather(loc) {
-  wundergrounded.conditions().astronomy().request(loc, function(error, response) {
+  wundergrounded.conditions().forecast().astronomy().request(loc, function(error, response) {
     if (error) {
       printError(error.errno || error.response.error.description || JSON.stringify(error));
     } else if (response.response.results) {
@@ -87,8 +87,34 @@ function printWeather(weather) {
     console.log("Wind: " + convertWindDirection(w.wind_degrees) + " From the " + w.wind_dir + " at " + w.wind_kph.toString().split(".")[0] + "km/h, gusting to " + w.wind_gust_kph.toString().split(".")[0] + "km/h");
   }
 
+  var forecastHeader;
+  var forecast;
+  switch (true) {
+    case imperial && (!nighttime || observed < sunrise):
+      forecastHeader = "Today in " + w.display_location.full + ":";
+      forecast = weather.forecast.txt_forecast.forecastday[0].fcttext;
+      break;
+    case imperial && nighttime:
+      forecastHeader = "Tonight in " + w.display_location.full + ":";
+      forecast = weather.forecast.txt_forecast.forecastday[1].fcttext;
+      break;
+    case !imperial && (!nighttime || observed < sunrise):
+      forecastHeader = "Today in " + w.display_location.full + ":";
+      forecast = "Today: " + weather.forecast.txt_forecast.forecastday[0].fcttext_metric;
+      break;
+    case !imperial && nighttime:
+      forecastHeader = "Tonight in " + w.display_location.full + ":";
+      forecast = weather.forecast.txt_forecast.forecastday[1].fcttext_metric;
+      break;
+    default:
+      forecastHeader = w.display_location.full;
+      forecast = "Error getting forecast";
+  }
+  forecast = forecast.replace(/\b(\d{1,3})(?=[FC]\b)/g, "$1°").replace(/\.[^.]*[Ww]inds[^.]*\./g, "."); // add degree symbol to temps and remove sentences containing "winds"
+
   console.log("---");
-  console.log("Forecast for " + w.display_location.full + " | href=" + w.forecast_url);
+  console.log(forecastHeader + " | href=" + w.forecast_url);
+  console.log(forecast + " | href=" + w.forecast_url);
   console.log("Station " + w.station_id + " | href=" + w.history_url);
   console.log(w.observation_time + "  ⟳ | refresh=true");
 
