@@ -13,12 +13,12 @@
   "author": "Leo Herzog",
   "license": "CC-BY-SA-4.0",
   "bugs": {
-    "url": "https://github.com/xd1936/wunderground-bitbar/issues"
+    "url": "https://github.com/leoherzog/wunderground-bitbar/issues"
   },
-  "homepage": "https://github.com/xd1936/wunderground-bitbar/",
+  "homepage": "https://github.com/leoherzog/wunderground-bitbar/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xd1936/wunderground-bitbar/"
+    "url": "https://github.com/leoherzog/wunderground-bitbar/"
   },
   "keywords": [
     "bitbar",
